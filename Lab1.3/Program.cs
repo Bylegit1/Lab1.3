@@ -20,7 +20,8 @@ namespace Lab1._3
             }
 
             var percent = letterCount * 100 / proposal.Length;
-            Console.WriteLine("Доля букв в данном предложении равно: " + percent + "%");
+            var result = "Доля(в процентах) букв в данном предложении равно: ";
+            Console.WriteLine(result + percent);
         }
     }
 }
