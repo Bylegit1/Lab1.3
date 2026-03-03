@@ -2,13 +2,10 @@
 
 namespace Lab1._3
 {
-    internal class Program
+    public class LetterPercentageLogic
     {
-        static void Main(string[] args)
+        public static int CountLetters(string proposal) 
         {
-            Console.WriteLine("Введите предложение: ");
-            var proposal = Console.ReadLine();
-
             var letterCount = 0;
             for (int i = 0; i < proposal.Length; i++)
             {
@@ -18,9 +15,27 @@ namespace Lab1._3
                     letterCount++;
                 }
             }
+            return letterCount;
+        }
 
-            var percent = letterCount * 100 / proposal.Length;
+        public static int CalcPercentage(int letterCount, int proposalLength)
+        {
+            return letterCount * 100 / proposalLength;
+        }
+
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите предложение: ");
+            var proposal = Console.ReadLine();
+
+            var letterCount = LetterPercentageLogic.CountLetters(proposal);
+            var percent = LetterPercentageLogic.CalcPercentage(letterCount, proposal.Length);
             var result = "Доля(в процентах) букв в данном предложении равно: ";
+
             Console.WriteLine(result + percent);
         }
     }
